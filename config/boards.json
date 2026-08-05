@@ -1,0 +1,33 @@
+{
+  "$comment": "Scout configuration. Edit freely: 'ashby' entries are jobs.ashbyhq.com board slugs, 'greenhouse' entries are boards-api.greenhouse.io board tokens (slug -> display name). Filters are case-insensitive regex strings applied to role titles; a title must match 'relevant' and not match 'disqualify'. Set usOnly=false to keep non-US roles.",
+  "filters": {
+    "relevant": "\\b(software engineer|swe|backend|infra(?:structure)?|platform|sre|site reliability|distributed systems|systems engineering|systems software|database|search|retrieval|devops|deployed|fullstack|full[- ]stack|reliability engineering|data engineer|storage engineer|network engineer|production engineer|applied ai|machine learning|ml engineer|ml infra(?:structure)?|ai engineer|ai infra(?:structure)?|build engineer|cloud engineer|ml platform|ai platform|api engineer|inference|product engineer|forward deployed|deployed engineer)\\b",
+    "disqualify": "\\b(senior|staff|principal|distinguished|fellow|director|manager|lead|head of|vp|chief|architect|intern(?:s|ship)?|co-?op|new[- ]?grad|university grad|early[- ]?career|associate engineer|apprentice|sales|recruiter|product manager|test engineer|qa engineer|sdet|quality assurance|marketing|customer success|sdr|operations lead|support engineer|legal|finance|accounting|human resources|it admin|mobile|ios|android|hardware|analyst|specialist|frontend engineer|front[- ]?end|design engineer|brand engineer|ui engineer|ux engineer|gtm|physical security|research scientist|technical recruiter|talent|community|content|technical writer|security engineer|designer)\\b",
+    "usOnly": true
+  },
+  "ashby": [
+    "baseten", "modal", "langchain", "lambda", "fireworks-ai", "together-ai", "runway-ml",
+    "anyscale", "mistral", "sierra", "harvey", "cresta", "weights-biases", "pinecone",
+    "vercel", "supabase", "temporal", "cohere", "writer", "scale-ai", "huggingface",
+    "replicate", "crusoe", "sourcegraph", "notion", "ramp", "decagon", "hebbia",
+    "abridge", "openpipe", "lancedb", "turbopuffer", "weaviate", "qdrant", "chroma",
+    "runpod", "llamaindex", "contextual-ai", "prefect", "dagster", "materialize",
+    "planetscale", "neon", "clickhouse", "tinybird", "e2b", "sfcompute", "coder",
+    "daytona", "braintrust", "humanloop", "langfuse", "hex", "deepnote", "glean",
+    "railway", "unstructured", "vapi", "retell", "fal", "warp", "zed", "cartesia",
+    "krea", "exa", "tavus", "deepgram"
+  ],
+  "greenhouse": {
+    "arizeai": "Arize AI", "snorkelai": "Snorkel AI", "tecton": "Tecton",
+    "assemblyai": "AssemblyAI", "tailscale": "Tailscale", "sourcegraph": "Sourcegraph",
+    "confluent": "Confluent", "hashicorp": "HashiCorp", "appliedintuition": "Applied Intuition",
+    "weaviate": "Weaviate", "cresta": "Cresta", "glean": "Glean", "anysphere": "Anysphere",
+    "databricks": "Databricks", "samsara": "Samsara", "plaid": "Plaid", "affirm": "Affirm",
+    "gitlab": "GitLab", "cockroachlabs": "Cockroach Labs", "starburst": "Starburst",
+    "clickhouse": "ClickHouse", "airbyte": "Airbyte", "dbtlabs": "dbt Labs",
+    "fivetran": "Fivetran", "scaleai": "Scale AI", "huggingface": "Hugging Face",
+    "runwayml": "Runway", "figma": "Figma", "retool": "Retool", "airtable": "Airtable",
+    "brex": "Brex", "mercury": "Mercury", "rippling": "Rippling", "instabase": "Instabase",
+    "notion": "Notion", "abridge": "Abridge", "suno": "Suno"
+  }
+}

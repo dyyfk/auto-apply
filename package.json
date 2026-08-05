@@ -1,0 +1,32 @@
+{
+  "name": "auto-apply",
+  "version": "1.0.0",
+  "description": "Job-application automation: scout open roles, queue them with dedup, auto-fill and submit ATS applications (Ashby / Greenhouse / Lever) driven by a per-user profile.",
+  "scripts": {
+    "setup": "node scripts/setup.js",
+    "doctor": "node scripts/doctor.js",
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "server": "NODE_NO_WARNINGS=1 node --watch server/index.js",
+    "client": "cd client && npm run dev",
+    "install:all": "npm install && cd client && npm install",
+    "build": "cd client && npm install && npm run build",
+    "start": "NODE_ENV=production NODE_NO_WARNINGS=1 node server/index.js",
+    "test": "NODE_NO_WARNINGS=1 node --test --test-concurrency=1 \"test/**/*.test.js\"",
+    "scout": "node scripts/scout.js",
+    "apply": "node scripts/apply.js"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "multer": "^1.4.5-lts.1",
+    "node-cron": "^4.2.1"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "playwright": "^1.59.1"
+  },
+  "engines": {
+    "node": ">=22.5.0"
+  }
+}
