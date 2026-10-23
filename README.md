@@ -31,6 +31,30 @@ scripts/scout.js ──► POST /api/jobs/bulk ──► job_queue (dedup + poli
 - **Client** (`client/`): React UI — first-run onboarding wizard, queue
   dashboard, application tracker, profile editor.
 
+## LinkedIn and Jobright connectors
+
+`scripts/connect.js` reads LinkedIn and Jobright through your own signed-in
+Chrome (the same CDP session `apply.js` uses), resolves each listing to its
+external application link, keeps only Ashby / Greenhouse / Lever links, and
+writes `roles.json` in the format `apply.js` already accepts.
+
+```bash
+google-chrome --remote-debugging-port=9222   # sign in to LinkedIn and Jobright once
+
+npm run connect -- linkedin --query "software engineer" --query "backend engineer" --recent-hours 24
+npm run connect -- jobright
+npm run connect -- all --max 60
+
+npm run apply -- roles.json --dry-run
+npm run apply -- roles.json
+```
+
+- Output is merged into `roles.json` by canonical URL; `--overwrite` replaces it, `--out` changes the path.
+- Title filters come from `config/boards.json`; `--no-filter` disables them.
+- `--push` also sends results to the queue (`/api/jobs/bulk`) so the server's dedup applies.
+- LinkedIn Easy Apply and unsupported ATS listings are skipped and counted in the summary.
+- Both sites discourage automated access. Keep `--max` modest and expect the page selectors to need occasional updates.
+
 ## Prerequisites
 
 | Requirement | Why | Check |
